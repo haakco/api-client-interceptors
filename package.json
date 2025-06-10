@@ -1,0 +1,44 @@
+{
+  "name": "@haakco/api-client-interceptors",
+  "version": "1.0.0",
+  "description": "Production-tested axios interceptors for authentication, caching, and error handling",
+  "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./auth": "./authInterceptor.ts",
+    "./cache": "./axiosClientCached.ts",
+    "./errors": "./errorHandler.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:haakco/api-client-interceptors"
+  },
+  "keywords": [
+    "axios",
+    "interceptors",
+    "authentication",
+    "caching",
+    "error-handling",
+    "react",
+    "redux"
+  ],
+  "author": "HaakCo",
+  "license": "MIT",
+  "peerDependencies": {
+    "axios": "^1.6.0",
+    "axios-cache-interceptor": "^1.5.0",
+    "@reduxjs/toolkit": "^2.0.0",
+    "react-router": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0"
+  },
+  "files": [
+    "index.ts",
+    "authInterceptor.ts",
+    "axiosClientCached.ts",
+    "errorHandler.ts",
+    "__tests__"
+  ]
+}
