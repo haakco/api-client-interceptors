@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AsyncThunk, AsyncThunkAction, PayloadAction } from '@reduxjs/toolkit';
-import Axios, { AxiosInstance } from 'axios';
-import { setupCache, CacheInstance } from 'axios-cache-interceptor';
+import Axios from 'axios';
+import { setupCache } from 'axios-cache-interceptor';
 import { NavigateFunction } from 'react-router';
 
 export interface AxiosClientConfig {
@@ -40,7 +40,7 @@ export interface AxiosClientConfig {
  */
 export const createAxiosClients = (config: AxiosClientConfig = {}) => {
   const {
-    baseURL = import.meta.env.VITE_BACKEND_URL || '/api/v1',
+    baseURL = process.env.VITE_BACKEND_URL || '/api/v1',
     headers = {},
     withCredentials = true,
     authInterceptor
@@ -113,7 +113,7 @@ export const checkIfActionRejected = async (
 };
 
 // Legacy exports for backward compatibility
-export const baseURL = import.meta.env.VITE_BACKEND_URL || '/api/v1';
+export const baseURL = process.env.VITE_BACKEND_URL || '/api/v1';
 
 // Default client instances (legacy)
 const defaultClients = createAxiosClients();
